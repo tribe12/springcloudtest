@@ -1,4 +1,4 @@
-package com.wgh.userapi.bean;
+package com.wgh.userweb.bean;
 
 /**
  * Created by wgh on 2021/3/22.
@@ -8,7 +8,8 @@ public class User {
     private String name;
     private String pwd;
 
-    public User(){}
+    public User() {
+    }
 
     public User(Integer id, String name, String pwd) {
         this.id = id;
@@ -38,14 +39,5 @@ public class User {
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", pwd='" + pwd + '\'' +
-                '}';
     }
 }
