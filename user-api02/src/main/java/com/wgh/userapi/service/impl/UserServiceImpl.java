@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
     static {
         map = new HashMap<>();
         for (int i = 1; i < 6; i++) {
-            map.put(i, new User(i, "test_" + i, "pwd_" + i));
+            map.put(i, new User(i, "test02_" + i, "pwd02_" + i));
         }
     }
 
