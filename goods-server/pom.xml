@@ -3,31 +3,38 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-	
 	<parent>
 		<groupId>com.wgh.springcloudtest</groupId>
 		<artifactId>springcloudtest</artifactId>
   		<version>${parent-version}</version>
 	</parent>
-	<groupId>com.wgh.springcloudtest</groupId>
-    <artifactId>eureka-server02</artifactId>
-	
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+
+    <groupId>com.wgh.springcloudtest</groupId>
+    <artifactId>goods-server</artifactId>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.wgh.springcloudtest</groupId>
+            <artifactId>common-api</artifactId>
+            <version>${parent-version}</version>
+        </dependency>
+
         <!-- springmvc -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- eureka 服务端 -->
+        <!-- eureka 客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
+
 
 </project>
