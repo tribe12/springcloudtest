@@ -2,14 +2,11 @@ package com.wgh.springcloudtest.userweb.controller;
 
 import com.wgh.springcloudtest.userweb.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 /**
  * Created by wgh on 2021/3/22.
@@ -43,20 +40,20 @@ public class UserController {
      * @return
      * @throws Exception
      */
-    @RequestMapping("get/{id}")
-    public User get(@PathVariable("id") Integer id) throws Exception {
-
-        List<ServiceInstance> list = this.client.getInstances("USER-API");
-        String uri = "";
-        for (ServiceInstance instance : list) {
-            if (instance.getUri() != null && !"".equals(instance.getUri())) {
-                uri = instance.getUri().toString();
-                System.out.println("uri:" + uri);
-                break;
-            }
-        }
-        return restTemplate.getForObject(uri + "/provider/user/get/" + id, User.class);
-    }
+//    @RequestMapping("get/{id}")
+//    public User get(@PathVariable("id") Integer id) throws Exception {
+//
+//        List<ServiceInstance> list = this.client.getInstances("USER-API");
+//        String uri = "";
+//        for (ServiceInstance instance : list) {
+//            if (instance.getUri() != null && !"".equals(instance.getUri())) {
+//                uri = instance.getUri().toString();
+//                System.out.println("uri:" + uri);
+//                break;
+//            }
+//        }
+//        return restTemplate.getForObject(uri + "/provider/user/get/" + id, User.class);
+//    }
 
 
     /**
@@ -65,12 +62,12 @@ public class UserController {
      * @return
      * @throws Exception
      */
-/*    @RequestMapping("get/{id}")
+    @RequestMapping("get/{id}")
     public User get(@PathVariable("id") Integer id) throws Exception {
         String url = "http://USER-API/provider/user/get/" + id;
-  *//*      url = "http://localhost:8082/provider/user/get/" + id;
-        url = "http://user-api/provider/user/get/" + id;*//*
+//        url = "http://localhost:8082/provider/user/get/" + id;
+//        url = "http://user-api/provider/user/get/" + id;
         return restTemplate.getForObject(url, User.class);
-    }*/
+    }
 
 }

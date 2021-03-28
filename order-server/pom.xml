@@ -46,6 +46,17 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.wgh.springcloudtest</groupId>
+            <artifactId>user-web</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wgh.springcloudtest</groupId>
+            <artifactId>user-web</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 
 
     </dependencies>

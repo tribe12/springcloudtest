@@ -1,7 +1,6 @@
 package com.wgh.springcloudtest.userweb.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -9,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * Created by wgh on 2021/3/22.
  */
-@RibbonClient("USER-API")
+//@RibbonClient("USER-API")
 @Configuration
 public class RestConfiguration {
 
@@ -18,4 +17,6 @@ public class RestConfiguration {
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
+
+
 }

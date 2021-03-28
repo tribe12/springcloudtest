@@ -1,15 +1,20 @@
 server:
-  port: 80
+    port: 80
 
 spring:
-  application:
-    name: user-web
+    application:
+        name: user-web
 
 eureka:
-  single-url:  http://localhost:9000/eureka/ #注册中心地址（单机）
-  cluster-url: http://localhost:9000/eureka/,http://localhost:9001/eureka/  #注册中心地址（集群）
-  client:
-    register-with-eureka: false # 不向注册中心注册自己
-    fetch-registry: true        # 是否检索服务
-    service-url:
-      defaultZone: ${eureka.single-url} # 注册中心访问地址
+    instance:
+        instance-id: user-web-80
+        prefer-ip-address: true # 访问路径可以显示 IP
+
+    single-url:  http://localhost:9000/eureka/ #注册中心地址（单机）
+    cluster-url: http://localhost:9000/eureka/,http://localhost:9001/eureka/  #注册中心地址（集群）
+
+    client:
+#        register-with-eureka: true # 是否向注册中心注册自己
+#        fetch-registry: true        # 是否检索服务
+        service-url:
+            defaultZone: ${eureka.single-url} # 注册中心访问地址

@@ -2,8 +2,9 @@ package com.wgh.springcloudtest.orderserver.service;
 
 
 import com.wgh.springcouldtest.commonapi.model.Order;
+import com.wgh.springcouldtest.commonapi.vo.Result;
 
 public interface OrderService {
 
-	void placeOrder(Order order) throws Exception;
+	Result placeOrder(Order order) throws Exception;
 }

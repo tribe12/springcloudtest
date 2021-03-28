@@ -5,7 +5,6 @@ spring:
     application:
         name: USER-API
 
-
 eureka:
     instance:
         instance-id: user-api-8082

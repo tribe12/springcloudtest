@@ -18,7 +18,7 @@ public class OrderServiceImpl implements OrderService {
 //	private DiscoveryClient client;
 
 	@Override
-	public void placeOrder(Order order) throws Exception{
+	public Result placeOrder(Order order) throws Exception{
 		
 		// 获取商品服务地址列表
 //		List<ServiceInstance> list = this.client.getInstances("GOODS");
@@ -38,6 +38,8 @@ public class OrderServiceImpl implements OrderService {
 			System.out.println("=====下订单====");
 			System.out.println(result.getData());
 		}
+
+		return result;
 	}
 
 }
