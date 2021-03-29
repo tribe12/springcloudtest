@@ -1,0 +1,17 @@
+server:
+    port: 8082
+
+spring:
+  application:
+    name: GOODS
+
+eureka:
+    instance:
+        instance-id: goods-api-8082
+        prefer-ip-address: true # 访问路径可以显示 IP
+    single-url:  http://localhost:9000/eureka/ #注册中心地址（单机）
+    cluster-url: http://localhost:9000/eureka/,http://localhost:9001/eureka/  #注册中心地址（集群）
+
+    client:
+        service-url:
+            defaultZone: ${eureka.single-url}  # 注册中心访问地址

@@ -10,7 +10,8 @@ import java.io.Serializable;
 
 @Getter
 public class Result implements Serializable {
-
+    private static final int SUCCESS_CODE = 200;
+    private static final int FAIL_CODE = 500;
 
     private int code;
 
@@ -38,11 +39,11 @@ public class Result implements Serializable {
     }
 
     public static Result success(Object data) {
-        return new Result(200, "success", data);
+        return new Result(SUCCESS_CODE, "success", data);
     }
 
     public static Result fail() {
-        return fail(500, "fail");
+        return fail(FAIL_CODE, "fail");
     }
 
     public static Result fail(int code, String message) {
