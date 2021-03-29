@@ -21,16 +21,35 @@ public class OrderController {
 
     @RequestMapping("/place")
     public Result placeOrder(Order order) throws Exception {
+        System.out.println("=====================================place");
+        System.out.println("/order/place:" + order);
         return this.orderService.placeOrder(order);
     }
 
 
     @RequestMapping("/placefc")
     public Result placeOrderByFeignClient(Order order) throws Exception {
-        System.out.println("/order/placefc:"+ order);
+        System.out.println("=====================================placefc");
+        System.out.println("/order/placefc:" + order);
         Result result = this.goodsFeignClientService.goodsInfo(order.getGoodsId());
-        System.out.println("result:"+result);
+        System.out.println("result:" + result);
         return result;
     }
 
+
+    @RequestMapping("/placeerror")
+    public Result placeOrdeError(Order order) throws Exception {
+        System.out.println("=====================================placeerror");
+        order.setGoodsId("7");
+        System.out.println("/order/place:" + order);
+        return this.orderService.placeOrder(order);
+    }
+
+    @RequestMapping("/placeallerror")
+    public Result placeOrderAllError(Order order) throws Exception {
+        System.out.println("=====================================placeallerror");
+        System.out.println("/order/place:" + order);
+        this.orderService.placeOrderAllError();
+        return Result.fail();
+    }
 }

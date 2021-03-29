@@ -41,15 +41,16 @@
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
 
-        <!-- feign -->
+        <!-- open feign -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
+        <!-- hystrix -->
         <dependency>
-            <groupId>com.wgh.springcloudtest</groupId>
-            <artifactId>user-web</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
 
 

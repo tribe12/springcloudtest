@@ -6,5 +6,7 @@ import com.wgh.springcouldtest.commonapi.vo.Result;
 
 public interface OrderService {
 
-	Result placeOrder(Order order) throws Exception;
+    Result placeOrder(Order order) throws Exception;
+
+    void placeOrderAllError() throws Exception;
 }
