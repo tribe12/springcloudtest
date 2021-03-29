@@ -35,7 +35,7 @@ public class UserController {
     private DiscoveryClient client;
 
     /**
-     * 使用 Eureka + DiscoveryClient 后
+     * 使用 Eureka + DiscoveryClient
      * @param id
      * @return
      * @throws Exception
