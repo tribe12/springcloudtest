@@ -16,6 +16,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.wgh.springcloudtest</groupId>
+            <artifactId>common-api</artifactId>
+            <version>${parent-version}</version>
+        </dependency>
+
         <!-- springmvc -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,6 +1,6 @@
 package com.wgh.springcloudtest.userweb.controller;
 
-import com.wgh.springcloudtest.userweb.bean.User;
+import com.wgh.springcouldtest.commonapi.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -65,8 +65,6 @@ public class UserController {
     @RequestMapping("get/{id}")
     public User get(@PathVariable("id") Integer id) throws Exception {
         String url = "http://USER-API/provider/user/get/" + id;
-//        url = "http://localhost:8082/provider/user/get/" + id;
-//        url = "http://user-api/provider/user/get/" + id;
         return restTemplate.getForObject(url, User.class);
     }
 

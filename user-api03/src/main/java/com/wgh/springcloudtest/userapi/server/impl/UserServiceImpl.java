@@ -1,7 +1,7 @@
-package com.wgh.userapi.server.impl;
+package com.wgh.springcloudtest.userapi.server.impl;
 
-import com.wgh.userapi.server.UserService;
-import com.wgh.springcloudtest.userapi.bean.User;
+import com.wgh.springcloudtest.userapi.server.UserService;
+import com.wgh.springcouldtest.commonapi.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -27,4 +27,10 @@ public class UserServiceImpl implements UserService {
         return map.get(id);
     }
 
+    /**
+     * Created by wgh on 2021/3/22.
+     */
+    public static interface UserService {
+        User getById(Integer id);
+    }
 }

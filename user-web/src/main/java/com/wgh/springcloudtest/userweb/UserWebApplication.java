@@ -11,7 +11,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  *
  * Created by wgh on 2021/3/22.
  */
-//@RibbonClient("USER-API")
 @EnableEurekaClient
 //@EnableDiscoveryClient//此处只是为了体现服务发现的效果，实际开发中不使用 DiscoveryClient 查询服务进行调用！至于如何进行服务发现和调用可以使用Ribbon.
 @SpringBootApplication

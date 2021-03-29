@@ -8,7 +8,6 @@ import org.springframework.web.client.RestTemplate;
 /**
  * Created by wgh on 2021/3/22.
  */
-//@RibbonClient("USER-API")
 @Configuration
 public class RestConfiguration {
 

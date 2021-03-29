@@ -1,8 +1,8 @@
 package com.wgh.springcloudtest.orderserver.controller;
 
 import com.wgh.springcloudtest.orderserver.service.OrderService;
-import com.wgh.springcloudtest.userweb.bean.User;
 import com.wgh.springcouldtest.commonapi.model.Order;
+import com.wgh.springcouldtest.commonapi.model.User;
 import com.wgh.springcouldtest.commonapi.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

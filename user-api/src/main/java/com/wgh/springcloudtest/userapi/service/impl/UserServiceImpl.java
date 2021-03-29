@@ -1,7 +1,7 @@
 package com.wgh.springcloudtest.userapi.service.impl;
 
-import com.wgh.springcloudtest.userapi.bean.User;
 import com.wgh.springcloudtest.userapi.service.UserService;
+import com.wgh.springcouldtest.commonapi.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
