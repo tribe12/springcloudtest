@@ -1,6 +1,6 @@
 package com.wgh.springcloudtest.userweb.controller;
 
-import com.wgh.springcouldtest.commonapi.model.User;
+import com.wgh.springcloudtest.commonapi.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;

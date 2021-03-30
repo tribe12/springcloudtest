@@ -2,9 +2,10 @@ package com.wgh.springcloudtest.orderserver.service.impl;
 
 import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.wgh.springcloudtest.commonapi.client.GoodsServiceFeignClient;
 import com.wgh.springcloudtest.orderserver.service.OrderService;
-import com.wgh.springcouldtest.commonapi.model.Order;
-import com.wgh.springcouldtest.commonapi.vo.Result;
+import com.wgh.springcloudtest.commonapi.model.Order;
+import com.wgh.springcloudtest.commonapi.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -18,6 +19,15 @@ public class OrderServiceImpl implements OrderService {
 
 //	@Autowired
 //	private DiscoveryClient client;
+
+    @Autowired
+    private GoodsServiceFeignClient goodsServiceFeignClient;
+
+    @Override
+    public Result placeOrderByFeignClient(Order order) {
+        Result result = this.goodsServiceFeignClient.goodsInfo(order.getGoodsId());
+        return result;
+    }
 
     @HystrixCommand(fallbackMethod = "defaultByPlaceOrder")
     //@HystrixCommand
@@ -68,9 +78,9 @@ public class OrderServiceImpl implements OrderService {
      * 熔断后该类的统一默认处理方法
      *
      * @DefaultProperties + @HystrixCommand 配合使用
-     *
+     * <p>
      * 必须要在方法上加上@HystrixCommand
-     *
+     * <p>
      * defaultFallback 定义的方法必须是无参的，并且与报错的方法的返回参数必须一致
      */
     public void defaultByOrderService() {

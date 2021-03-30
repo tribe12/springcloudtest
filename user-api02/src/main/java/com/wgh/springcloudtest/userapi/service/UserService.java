@@ -1,7 +1,7 @@
 package com.wgh.springcloudtest.userapi.service;
 
 
-import com.wgh.springcouldtest.commonapi.model.User;
+import com.wgh.springcloudtest.commonapi.model.User;
 
 /**
  * Created by wgh on 2021/3/22.

@@ -1,4 +1,4 @@
-package com.wgh.springcouldtest.commonapi.model;
+package com.wgh.springcloudtest.commonapi.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

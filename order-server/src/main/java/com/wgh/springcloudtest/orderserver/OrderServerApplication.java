@@ -6,8 +6,9 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
+//@ComponentScan(basePackages = {"com.wgh.springcloudtest"})//  为了能扫描common-api项目中的 GoodsServiceClientFallbackFactory
 @EnableCircuitBreaker//开启熔断功能
-@EnableFeignClients(basePackages = {"com.wgh.springcloudtest"})
+@EnableFeignClients(basePackages = {"com.wgh.springcloudtest"})//能扫描common-api项目中的GoodsServiceFeignClient
 @EnableEurekaClient
 @SpringBootApplication
 public class OrderServerApplication {

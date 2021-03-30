@@ -1,8 +1,8 @@
 package com.wgh.springcloudtest.goodsserver02.controller;
 
 import com.wgh.springcloudtest.goodsserver02.service.GoodsService;
-import com.wgh.springcouldtest.commonapi.model.Goods;
-import com.wgh.springcouldtest.commonapi.vo.Result;
+import com.wgh.springcloudtest.commonapi.model.Goods;
+import com.wgh.springcloudtest.commonapi.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

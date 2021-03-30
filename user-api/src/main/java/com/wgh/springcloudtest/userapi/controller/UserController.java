@@ -1,7 +1,7 @@
 package com.wgh.springcloudtest.userapi.controller;
 
 import com.wgh.springcloudtest.userapi.service.UserService;
-import com.wgh.springcouldtest.commonapi.model.User;
+import com.wgh.springcloudtest.commonapi.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

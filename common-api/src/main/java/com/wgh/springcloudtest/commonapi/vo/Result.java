@@ -1,4 +1,4 @@
-package com.wgh.springcouldtest.commonapi.vo;
+package com.wgh.springcloudtest.commonapi.vo;
 
 /**
  * Created by wgh on 2021/3/26.

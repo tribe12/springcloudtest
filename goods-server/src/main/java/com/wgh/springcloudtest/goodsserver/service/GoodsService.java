@@ -1,7 +1,7 @@
 package com.wgh.springcloudtest.goodsserver.service;
 
 
-import com.wgh.springcouldtest.commonapi.model.Goods;
+import com.wgh.springcloudtest.commonapi.model.Goods;
 
 public interface GoodsService {
 

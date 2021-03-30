@@ -1,7 +1,7 @@
 package com.wgh.springcloudtest.goodsserver02.service.impl;
 
 import com.wgh.springcloudtest.goodsserver02.service.GoodsService;
-import com.wgh.springcouldtest.commonapi.model.Goods;
+import com.wgh.springcloudtest.commonapi.model.Goods;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.wgh.springcouldtest.commonapi.model;
+package com.wgh.springcloudtest.commonapi.model;
 
 /**
  * Created by wgh on 2021/3/22.
