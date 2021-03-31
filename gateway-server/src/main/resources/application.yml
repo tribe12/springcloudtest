@@ -1,0 +1,31 @@
+server:
+    port: 9600
+
+spring:
+    application:
+        name: gateway
+
+eureka:
+    instance:
+        instance-id: gateway-9600
+        prefer-ip-address: true
+
+    single-url:  http://localhost:9000/eureka/ #注册中心地址（单机）
+    cluster-url: http://localhost:9000/eureka/,http://localhost:9001/eureka/  #注册中心地址（集群）
+
+    client:
+        service-url:
+            defaultZone: ${eureka.single-url}  # 注册中心访问地址
+
+
+zuul:
+    sensitive-headers: # 全局忽略敏感头，即允许接收 cookie 等请求头信息
+    routes:
+        extlight: # 任意名字，保证唯一即可
+            path: /wgh/** # 自定义，真正用到的请求地址
+            service-id: ORDER  # 路由到的目标服务名称
+    #禁用路由
+    #ignored-patterns:
+        #- /order/order/**
+
+    # prefix: /api #路由加前缀（则所有请求中的path需要添加api前缀）
