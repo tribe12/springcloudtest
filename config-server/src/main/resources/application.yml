@@ -1,0 +1,25 @@
+server:
+  port: 10000
+
+spring:
+  application:
+    name: CONFIG
+  cloud:
+    config:
+      server:
+        git:
+          default-label: main #指定分支
+          search-paths: config-data #指定路径，配置多个路径用逗号分隔
+          uri: https://github.com/tribe12/springcloudtest.git #会把整个库都拉下来
+          username: tribe12
+          password: 
+          basedir: F:/javatest/spring/springcloudtest/config-data # 本地库目录
+eureka:
+  instance:
+      instance-id: config-api
+  single-url:  http://localhost:9000/eureka/ #注册中心地址（单机）
+  cluster-url: http://localhost:9000/eureka/,http://localhost:9001/eureka/  #注册中心地址（集群）
+
+  client:
+      service-url:
+          defaultZone: ${eureka.single-url}  # 注册中心访问地址
