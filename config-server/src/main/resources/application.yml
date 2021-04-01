@@ -12,7 +12,7 @@ spring:
           search-paths: config-data #指定路径，配置多个路径用逗号分隔
           uri: https://github.com/tribe12/springcloudtest.git #会把整个库都拉下来
           username: tribe12
-          password: 
+          password:
           basedir: F:/javatest/spring/springcloudtest/config-data # 本地库目录
 eureka:
   instance:
