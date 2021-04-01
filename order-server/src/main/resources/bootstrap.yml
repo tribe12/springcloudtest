@@ -1,0 +1,16 @@
+spring:
+    application:
+        name: ORDER
+    cloud:
+        config:
+        discovery:
+            enabled: true
+            service-id: CONFIG  # config-server 在注册中心的名称
+        profile: dev  # 指定配置文件的环境
+eureka:
+    single-url:  http://localhost:9000/eureka/ #注册中心地址（单机）
+    cluster-url: http://localhost:9000/eureka/,http://localhost:9001/eureka/  #注册中心地址（集群）
+
+    client:
+        service-url:
+            defaultZone: ${eureka.single-url}  # 注册中心访问地址
