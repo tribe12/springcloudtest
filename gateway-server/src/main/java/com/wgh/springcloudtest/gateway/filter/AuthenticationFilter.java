@@ -3,6 +3,8 @@ package com.wgh.springcloudtest.gateway.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
+import com.wgh.springcloudtest.commonapi.constant.CommonWords;
+import com.wgh.springcloudtest.commonapi.utils.HttpUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
@@ -42,20 +44,25 @@ public class AuthenticationFilter extends ZuulFilter {
      */
     @Override
     public Object run() throws ZuulException {
-
+        System.out.println("======== AuthenticationFilter.run() ========");
         RequestContext context = RequestContext.getCurrentContext();
         HttpServletRequest request = context.getRequest();
-        String token = request.getParameter("token");
-        // 此处模拟获取数据库或缓存中的 token
-        String dbToken = "123456";
-        // 此处简单检验 token
-        if (token == null || "".equals(token) || !dbToken.equals(token)) {
+        // 模拟获取数据库或缓存中的token
+        String dbToken = getTokenByDb();
+        /**
+        * 根据自身业务需求制定拦截任务
+        */
+        if (HttpUtils.checkCookie(request, CommonWords.TOKEN, dbToken)) {
+            context.setSendZuulResponse(true);
+            context.setResponseStatusCode(HttpStatus.OK.value());
+        } else {
             context.setSendZuulResponse(false);
             context.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
         }
 
         return null;
     }
+
 
     /**
      * 过滤器类型
@@ -82,5 +89,17 @@ public class AuthenticationFilter extends ZuulFilter {
     @Override
     public int filterOrder() {
         return 0;
+    }
+
+
+    /**
+     *
+     *
+     * @return
+     */
+    public String getTokenByDb() {
+        //模拟从数据库或缓存中获取的token
+        String dbToken = "123456";
+        return dbToken;
     }
 }
