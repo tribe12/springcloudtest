@@ -12,8 +12,15 @@ spring:
           search-paths: config-data #指定路径，配置多个路径用逗号分隔
           uri: https://github.com/tribe12/springcloudtest.git #会把整个库都拉下来
           username: tribe12
-          password:
+          password: xxxxxx
           basedir: F:/javatest/spring/springcloudtest/config-data # 本地库目录
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
 eureka:
   instance:
       instance-id: config-api
@@ -23,3 +30,10 @@ eureka:
   client:
       service-url:
           defaultZone: ${eureka.single-url}  # 注册中心访问地址
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 暴露接口

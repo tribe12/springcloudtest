@@ -16,4 +16,4 @@ management:
       exposure:
         include: "*"
         
-env: dev123
+env: dev

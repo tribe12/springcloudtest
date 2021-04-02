@@ -10,6 +10,13 @@ spring:
 #            enabled: true
 #            service-id: CONFIG  # config-server 在注册中心的名称
 
+    rabbitmq:
+        host: 127.0.0.1
+        port: 5672
+        username: guest
+        password: guest
+
+
 eureka:
     single-url:  http://localhost:9000/eureka/ #注册中心地址（单机）
     cluster-url: http://localhost:9000/eureka/,http://localhost:9001/eureka/  #注册中心地址（集群）
